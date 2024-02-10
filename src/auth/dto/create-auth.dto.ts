@@ -5,7 +5,7 @@ export class CreateAuthDto {
     apellidop:string
     apellidom:string
     sexo:string
-    birthdate?:Date | null;
+    fecha?:Date | null;
     nombreu:string
     contrasena:string
     telefono: string
