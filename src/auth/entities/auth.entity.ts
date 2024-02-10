@@ -20,4 +20,7 @@ export class Auth {
     nombreu:string
     @Column()
     contrasena:string
+
+    @Column()
+    telefono: string
 }

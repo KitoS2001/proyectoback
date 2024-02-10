@@ -8,4 +8,5 @@ export class CreateAuthDto {
     birthdate?:Date | null;
     nombreu:string
     contrasena:string
+    telefono: string
 }
