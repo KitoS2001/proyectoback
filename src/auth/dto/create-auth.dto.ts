@@ -3,7 +3,7 @@ export class CreateAuthDto {
     nombre:string
     email:string
     apellidop:string
-    apellidom?:string
+    apellidom:string
     sexo:string
     fecha?:Date | null;
     nombreu:string
