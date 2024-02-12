@@ -20,7 +20,7 @@ export class EmailService {
            from: '"Meyer"',
            to: userData.to,
            subject: 'Token',
-           text: "Tu token es: "+code,
+           text: "Tienes 3 minutos para colocar Tu token es: "+code,
          };
 
          const info = await this.transporter.sendMail(mailOptions);
