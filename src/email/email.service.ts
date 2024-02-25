@@ -14,18 +14,27 @@ export class EmailService {
         pass: 'etoq ssof sfer mhka',
       },
     });}
-
-    async sendMail(userData:SendEmailDto, code:string): Promise<void> { 
-         const mailOptions: nodemailer.SendMailOptions = {
-           from: '"Meyer"',
-           to: userData.to,
-           subject: 'Token',
-           text: "Tienes 3 minutos para colocar Tu token es: "+code,
-         };
-
-         const info = await this.transporter.sendMail(mailOptions);
-         console.log('Message sent: %s', info.messageId); 
+    async sendMail(userData: SendEmailDto, code: string): Promise<void> {
+      const mailOptions: nodemailer.SendMailOptions = {
+        from: '"Dental Crown"',
+        to: userData.to,
+        subject: 'Código de Acceso para Dental Crown',
+        html: `
+          <h1>¡Bienvenido a Dental Crown!</h1>
+          <p>Hola,</p>
+          <p>Aquí tienes tu código de acceso único:</p>
+          <h2 style="background-color: #f0f0f0; padding: 10px;">${code}</h2>
+          <p>Por favor, asegúrate de utilizar este código dentro de los próximos 3 minutos.</p>
+          <p>Gracias por confiar en Dental Crown para tus necesidades dentales.</p>
+          <p>Atentamente,<br>El equipo de Dental Crown</p>
+        `,
+      };
+    
+      const info = await this.transporter.sendMail(mailOptions);
+      console.log('Message sent: %s', info.messageId);
     }
+    
+    
 
     generateCode():string{
         const caracteres = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
