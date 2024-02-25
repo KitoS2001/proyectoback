@@ -20,7 +20,7 @@ export class EmailService {
         to: userData.to,
         subject: 'Código de Acceso para Dental Crown',
         html: `
-          <img src="email\logosinfondo.png" alt="Dental Crown Logo" width="150">
+          <img src="https://github.com/CarlosMeyer400400/Cifrado-de-Transposici-n-en-Vue-y-la-libreria-crypto-js/blob/main/logosinfondo.png" alt="Dental Crown Logo" width="150">
           <h1>¡Bienvenido a Dental Crown!</h1>
           <p>Hola,</p>
           <p>Aquí tienes tu código de acceso único:</p>
