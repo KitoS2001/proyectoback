@@ -26,6 +26,7 @@ export class EmailService {
           <p>Aquí tienes tu código de acceso único:</p>
           <h2 style="background-color: #f0f0f0; padding: 10px;">${code}</h2>
           <p>Por favor, asegúrate de utilizar este código dentro de los próximos 3 minutos.</p>
+          <p>Si tú no has intentado recuperar tu contraseña ignora este correo.</p>
           <p>Gracias por confiar en Dental Crown para tus necesidades dentales.</p>
           <p>Atentamente,<br>El equipo de Dental Crown</p>
         `,
