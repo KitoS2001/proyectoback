@@ -36,6 +36,6 @@ resetearIntentos(id:number){
       "UPDATE usuarios SET intentos = 0 WHERE id_usuario = "+id+""
     )
     console.log("Intentos reseteados")
-  },3000000)
+  },100000)
 }
 }
