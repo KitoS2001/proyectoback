@@ -22,7 +22,15 @@ export class AuthService {
     })
     return this.authRepository.save(newuser)
   }
-
+////////////////////////////////////////////////
+  update(id: number, updateAuthDto: UpdateAuthDto) {
+    const {contrasena,...resultado}=updateAuthDto
+    const updateuser= this.authRepository.update(id,{
+      contrasena: bcryptjs.hashSync(contrasena,10),
+      ...resultado
+    })
+    return updateuser
+  }
 
   async validLogin(createLoginDto: ValidarLogin):Promise<boolean> {
 
@@ -44,9 +52,7 @@ export class AuthService {
     });
   }
 
-  update(id: number, updateAuthDto: UpdateAuthDto) {
-    return this.authRepository.update(id,updateAuthDto)
-  }
+ 
 
   remove(id: number) {
     return this.authRepository.delete({
@@ -61,4 +67,6 @@ export class AuthService {
     });
     return user;
   }
+
+
 }
