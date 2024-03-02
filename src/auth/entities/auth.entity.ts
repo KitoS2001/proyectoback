@@ -23,4 +23,9 @@ export class Auth {
 
     @Column()
     telefono: string
+
+
+    @Column({nullable:true})
+    intentos?: number | null
 }
+

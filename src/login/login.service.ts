@@ -4,11 +4,14 @@ import { UpdateLoginDto } from './dto/update-login.dto';
 import { ValidarLogin } from 'src/auth/dto/ValidLoginDto-auth';
 import * as bcryptjs from 'bcryptjs';
 import { AuthService } from 'src/auth/auth.service';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Auth } from 'src/auth/entities/auth.entity';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class LoginService {
 
-constructor(private authService: AuthService){}
+constructor( @InjectRepository(Auth) private authRepository: Repository <Auth>, private authService: AuthService){}
 
   async validLogin(createLoginDto: ValidarLogin):Promise<boolean> {
 
@@ -18,5 +21,21 @@ constructor(private authService: AuthService){}
       return true;
     else
       return false; 
+}
+
+asignarIntentos(id:number, intento:number){
+  this.authRepository.query(
+    "UPDATE usuarios SET intentos = "+intento+" WHERE id = "+id+""
+  )
+}
+
+resetearIntentos(id:number){
+  console.log("conteo iniciado")
+  setTimeout(()=>{
+    this.authRepository.query(
+      "UPDATE usuarios SET intentos = 0 WHERE id = "+id+""
+    )
+    console.log("Intentos reseteados")
+  },10000)
 }
 }

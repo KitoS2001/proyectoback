@@ -1,2 +1,5 @@
-export class CreateLoginDto {}
+export class CreateLoginDto {
+    email: string
+    contrasena: string
+}
 
