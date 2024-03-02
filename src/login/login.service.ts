@@ -25,7 +25,7 @@ constructor( @InjectRepository(Auth) private authRepository: Repository <Auth>, 
 
 asignarIntentos(id:number, intento:number){
   this.authRepository.query(
-    "UPDATE usuarios SET intentos = "+intento+" WHERE id = "+id+""
+    "UPDATE usuarios SET intentos = "+intento+" WHERE id_usuario = "+id+""
   )
 }
 
@@ -33,7 +33,7 @@ resetearIntentos(id:number){
   console.log("conteo iniciado")
   setTimeout(()=>{
     this.authRepository.query(
-      "UPDATE usuarios SET intentos = 0 WHERE id = "+id+""
+      "UPDATE usuarios SET intentos = 0 WHERE id_usuario = "+id+""
     )
     console.log("Intentos reseteados")
   },10000)
