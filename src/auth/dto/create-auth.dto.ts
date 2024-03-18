@@ -9,4 +9,6 @@ export class CreateAuthDto {
     nombreu:string
     contrasena:string
     telefono: string
+    pregunta:string
+    respuesta:string
 }

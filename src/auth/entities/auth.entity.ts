@@ -20,10 +20,12 @@ export class Auth {
     nombreu:string
     @Column()
     contrasena:string
-
     @Column()
     telefono: string
-
+    @Column()
+    pregunta:string
+    @Column()
+    respuesta:string
 
     @Column({nullable:true})
     intentos?: number | null
