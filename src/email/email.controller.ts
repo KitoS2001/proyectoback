@@ -19,6 +19,7 @@ export class EmailController {
           status:HttpStatus.OK,
           message:"Email enviado correctamente",
           codigo: code,
+          
           id: (await resp).id_usuario
         }
        } 

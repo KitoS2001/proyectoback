@@ -30,4 +30,3 @@ export class Auth {
     @Column({nullable:true})
     intentos?: number | null
 }
-
