@@ -11,7 +11,7 @@ import { RecuperarPassModule } from './recuperar-pass/recuperar-pass.module';
   imports: [
     TypeOrmModule.forRoot({
     type: 'mysql',
-    host: 'localhost',//roundhouse.proxy.rlwy.net
+    host: 'roundhouse.proxy.rlwy.net',//localhost
     port: 3306,
     username: 'root',
     password: '',
